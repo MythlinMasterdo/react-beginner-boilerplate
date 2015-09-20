@@ -9,6 +9,7 @@ var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var precss = require('precss');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: ['./src/routes/router.js', 'webpack/hot/only-dev-server'],
@@ -56,6 +57,11 @@ module.exports = {
   },
   postcss: [autoprefixer, precss],
   plugins: [
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      filename: 'index.html',
+      template: './src/assets/index_template.html'
+    }),
     new webpack.HotModuleReplacementPlugin()
   ]
 

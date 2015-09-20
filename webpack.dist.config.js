@@ -10,6 +10,7 @@ var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var precss = require('precss');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -35,7 +36,14 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('app.css', {
+    new webpack.optimize.CommonsChunkPlugin('app', 'app.js'),
+    new HtmlWebpackPlugin({
+      inject: 'head',
+      hash: true,
+      filename: '../index.html',
+      template: './src/assets/index_template.html'
+    }),
+    new ExtractTextPlugin("app.css", {
       publicPath: '/assets/',
       allChunks: true
     })
