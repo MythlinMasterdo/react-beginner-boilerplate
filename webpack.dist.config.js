@@ -13,7 +13,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/components/main.js',
+    app: './src/routes/router.js',
   },
   output: {
     publicPath: '/assets/',

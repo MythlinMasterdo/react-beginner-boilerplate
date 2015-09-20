@@ -11,7 +11,7 @@ var precss = require('precss');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/components/main.js', 'webpack/hot/only-dev-server'],
+  entry: ['./src/routes/router.js', 'webpack/hot/only-dev-server'],
   output: {
     publicPath: '/assets/',
     filename: 'app.js'
@@ -48,7 +48,7 @@ module.exports = {
       loader: 'react-hot!babel-loader'
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
+      loader: 'style-loader!css-loader!postcss-loader'
     }, {
       test: /\.(png|jpg|woff|woff2)$/,
       loader: 'url-loader?limit=8192'
@@ -56,11 +56,7 @@ module.exports = {
   },
   postcss: [autoprefixer, precss],
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('app.css', {
-      publicPath: '/assets/',
-      allChunks: true
-    })
+    new webpack.HotModuleReplacementPlugin()
   ]
 
 };

@@ -1,8 +1,8 @@
 'use strict';
-
 // CSS
 import 'normalize.css';
 import '../assets/css/app.css';
+
 import React from 'react';
 import { Link, RouteHandler } from 'react-router';
 
