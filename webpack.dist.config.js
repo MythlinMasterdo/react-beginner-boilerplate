@@ -17,7 +17,7 @@ module.exports = {
     app: './src/routes/router.js',
   },
   output: {
-    publicPath: '/assets/',
+    publicPath: 'assets/',
     path: 'dist/assets/',
     filename: 'app.js'
   },
@@ -38,8 +38,8 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.optimize.CommonsChunkPlugin('app', 'app.js'),
     new HtmlWebpackPlugin({
-      inject: 'head',
-      hash: true,
+      inject: 'body',
+      hash: false,
       filename: '../index.html',
       template: './src/assets/index_template.html'
     }),
