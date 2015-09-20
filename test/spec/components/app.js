@@ -1,19 +1,19 @@
 'use strict';
 
-describe('BoilerplateApp', () => {
+describe('App', () => {
   let React = require('react/addons');
-  let BoilerplateApp, component;
+  let App, component;
 
   beforeEach(() => {
     let container = document.createElement('div');
     container.id = 'content';
     document.body.appendChild(container);
 
-    BoilerplateApp = require('components/BoilerplateApp.js');
-    component = React.createElement(BoilerplateApp);
+    App = require('components/app.js');
+    component = React.createElement(App);
   });
 
-  it('should create a new instance of BoilerplateApp', () => {
+  it('should create a new instance of App', () => {
     expect(component).toBeDefined();
   });
 });

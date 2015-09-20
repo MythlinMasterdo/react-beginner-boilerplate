@@ -1,18 +1,20 @@
 'use strict';
 
-var BoilerplateApp = require('./BoilerplateApp');
-var React = require('react');
-var Router = require('react-router');
-var Route = Router.Route;
+import React from 'react';
+import Router, { Route, DefaultRoute } from 'react-router';
+import App from './app';
+import Index from './index';
+import About from './about';
 
-var content = document.getElementById('content');
-
-var Routes = (
-  <Route handler={BoilerplateApp}>
-    <Route name="/" handler={BoilerplateApp}/>
+var routes = (
+  <Route name="app" handler={App} path='/'>
+    <DefaultRoute handler={Index} />
+    <Route name="index" handler={Index} />
+    <Route name="about" handler={About} />
   </Route>
 );
 
-Router.run(Routes, function (Handler) {
+var content = document.getElementById('react');
+Router.run(routes, function (Handler) {
   React.render(<Handler/>, content);
 });
