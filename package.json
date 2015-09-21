@@ -1,14 +1,30 @@
 {
-  "name": "Boilerplate App",
-  "version": "0.0.0",
-  "description": "",
-  "repository": "",
-  "private": true,
-  "src": "src",
-  "test": "test",
-  "dist": "dist",
-  "mainInput": "main",
-  "mainOutput": "main",
+  "name": "react-beginner-boilerplate",
+  "version": "0.0.1",
+  "description": "React boilerplate friendly for beginners and suitable for small, mid-sized apps. Can be hosted on Github Pages.",
+  "keywords": [
+    "react",
+    "react-router",
+    "webpack",
+    "boilerplate",
+    "reflux",
+    "es6",
+    "postcss"
+  ],
+  "homepage": "https://github.com/danii1/react-boilerplate",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/danii1/react-boilerplate"
+  },
+  "bugs": "https://github.com/danii1/react-boilerplate/issues",
+  "author": {
+    "name": "Daniil Pokrovsky",
+    "url": "https://github.com/danii1"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.12.0"
+  },
   "dependencies": {
     "jquery": "^2.1.4",
     "normalize.css": "~3.0.3",
