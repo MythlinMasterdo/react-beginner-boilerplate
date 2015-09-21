@@ -19,7 +19,8 @@ module.exports = {
   output: {
     publicPath: 'assets/',
     path: 'dist/assets/',
-    filename: 'app.js'
+    filename: 'app.js',
+    hash: true
   },
 
   debug: false,
@@ -36,14 +37,14 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin('app', 'app.js'),
+    new webpack.optimize.CommonsChunkPlugin('app', 'app-[chunkhash].js'),
     new HtmlWebpackPlugin({
+      append: true,
       inject: 'body',
-      hash: false,
       filename: '../index.html',
       template: './src/assets/index_template.html'
     }),
-    new ExtractTextPlugin("app.css", {
+    new ExtractTextPlugin("app-[chunkhash].css", {
       publicPath: '/assets/',
       allChunks: true
     })
