@@ -2,6 +2,8 @@
   "name": "react-beginner-boilerplate",
   "version": "0.0.1",
   "description": "React boilerplate friendly for beginners and suitable for small, mid-sized apps. Can be hosted on Github Pages.",
+  "src": "src",
+  "dist": "dist",
   "keywords": [
     "react",
     "react-router",
