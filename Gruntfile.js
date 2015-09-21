@@ -103,7 +103,15 @@ module.exports = function (grunt) {
           ]
         }]
       }
+    },
+
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
     }
+
   });
 
   grunt.registerTask('serve', function (target) {
@@ -120,6 +128,8 @@ module.exports = function (grunt) {
   grunt.registerTask('test', ['karma']);
 
   grunt.registerTask('build', ['clean', 'copy', 'webpack']);
+
+  grunt.registerTask('publish', ['clean', 'copy', 'webpack', 'gh-pages']);
 
   grunt.registerTask('default', []);
 };
