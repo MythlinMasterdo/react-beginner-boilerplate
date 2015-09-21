@@ -30,6 +30,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx'],
     alias: {
+      'jquery': __dirname + '/node_modules/jquery/dist/jquery.js',
       'styles': __dirname + '/src/assets/css',
       'mixins': __dirname + '/src/mixins',
       'components': __dirname + '/src/components/',
@@ -57,6 +58,10 @@ module.exports = {
   },
   postcss: [autoprefixer, precss],
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
     new HtmlWebpackPlugin({
       inject: 'body',
       filename: 'index.html',

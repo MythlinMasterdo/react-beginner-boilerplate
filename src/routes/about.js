@@ -5,7 +5,7 @@ import React from 'react';
 export default React.createClass({
   render() {
     return (
-      <div class='about-route'>
+      <div className='about-route'>
         <h1>About</h1>
       </div>
     );

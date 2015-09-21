@@ -31,28 +31,10 @@ module.exports = {
     reasons: false
   },
 
-  plugins: [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.AggressiveMergingPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin('app', 'app-[chunkhash].js'),
-    new HtmlWebpackPlugin({
-      append: true,
-      inject: 'body',
-      filename: '../index.html',
-      template: './src/assets/index_template.html'
-    }),
-    new ExtractTextPlugin("app-[chunkhash].css", {
-      publicPath: '/assets/',
-      allChunks: true
-    })
-  ],
-
   resolve: {
     extensions: ['', '.js', '.jsx'],
     alias: {
+      'jquery': __dirname + '/node_modules/jquery/dist/jquery.js',
       'styles': __dirname + '/src/assets/css',
       'mixins': __dirname + '/src/mixins',
       'components': __dirname + '/src/components/',
@@ -79,7 +61,27 @@ module.exports = {
       loader: 'url-loader?limit=8192'
     }]
   },
-  postcss: function () {
-      return [precss, autoprefixer];
-  }
+  postcss: [precss, autoprefixer],
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.AggressiveMergingPlugin(),
+    new webpack.NoErrorsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin('app', 'app-[chunkhash].js'),
+    new HtmlWebpackPlugin({
+      append: true,
+      inject: 'body',
+      filename: '../index.html',
+      template: './src/assets/index_template.html'
+    }),
+    new ExtractTextPlugin("app-[chunkhash].css", {
+      publicPath: '/assets/',
+      allChunks: true
+    })
+  ]
 };
