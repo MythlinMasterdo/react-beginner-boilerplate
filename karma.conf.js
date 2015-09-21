@@ -52,6 +52,7 @@ module.exports = function (config) {
       postcss: [autoprefixer, precss],
       resolve: {
         alias: {
+          'root': path.join(process.cwd(), './src/'),
           'styles': path.join(process.cwd(), './src/styles/'),
           'components': path.join(process.cwd(), './src/components/'),
           'routes': path.join(process.cwd(), './src/routes/'),

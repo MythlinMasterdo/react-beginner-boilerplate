@@ -14,7 +14,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/routes/router.js',
+    app: './src/app.js',
   },
   output: {
     publicPath: 'assets/',
@@ -78,7 +78,8 @@ module.exports = {
       append: true,
       inject: 'body',
       filename: '../index.html',
-      template: './src/assets/index_template.html'
+      template: './src/assets/index_template.html',
+      favicon: './src/assets/favicon.ico'
     }),
     new ExtractTextPlugin("app-[chunkhash].css", {
       publicPath: '/assets/',

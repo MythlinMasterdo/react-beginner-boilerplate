@@ -77,6 +77,7 @@ module.exports = function (grunt) {
       dist: {
         files: [
           // includes files within path
+          /*
           {
             flatten: true,
             expand: true,
@@ -90,6 +91,7 @@ module.exports = function (grunt) {
             src: ['<%= pkg.src %>/images/*'],
             dest: '<%= pkg.dist %>/images/'
           }
+          */
         ]
       }
     },

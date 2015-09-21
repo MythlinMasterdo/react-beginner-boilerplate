@@ -12,7 +12,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: ['./src/routes/router.js', 'webpack/hot/only-dev-server'],
+  entry: ['./src/app.js', 'webpack/hot/only-dev-server'],
   output: {
     publicPath: '/assets/',
     filename: 'app.js'
@@ -66,7 +66,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: 'body',
       filename: 'index.html',
-      template: './src/assets/index_template.html'
+      template: './src/assets/index_template.html',
+      favicon: './src/assets/favicon.ico'
     }),
     new webpack.HotModuleReplacementPlugin()
   ]
