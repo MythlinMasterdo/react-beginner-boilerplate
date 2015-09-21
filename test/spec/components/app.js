@@ -9,7 +9,7 @@ describe('App', () => {
     container.id = 'content';
     document.body.appendChild(container);
 
-    App = require('components/app.js');
+    App = require('routes/app.js');
     component = React.createElement(App);
   });
 
