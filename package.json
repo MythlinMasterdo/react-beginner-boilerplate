@@ -18,7 +18,7 @@
     "test:watch": "./node_modules/karma/bin/karma start karma.conf.js --no-single-run --auto-watch",
     "server": "./node_modules/.bin/webpack-dev-server --config webpack.config.js --hot --progress --colors --inline --content-base ./build",
     "browser": "node ./openurl.js",
-    "launch": "(sleep 0.5 && npm run browser) & npm run server",
+    "launch": "(sleep 1 && npm run browser) & npm run server",
     "clean": "rm -rf ./dist",
     "build": "rm -rf ./dist && ./node_modules/.bin/webpack --config webpack.dist.config.js",
     "deploy": "rm -rf ./dist && npm run build && node ./publish.js"
