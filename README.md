@@ -38,7 +38,7 @@ Build project for production
 npm run build   - build project in dist/ dir
 ```
 
-Deploy project on Github
+Deploy project to Github
 ```
 npm run deploy  - build and push contents of the dist/ dir to the Github Pages
 ```
