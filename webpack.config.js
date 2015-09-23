@@ -14,7 +14,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: ['./src/app.js', 'webpack/hot/only-dev-server'],
   output: {
-    publicPath: '/assets/',
+    publicPath: '/',
     filename: 'app.js'
   },
 
@@ -65,8 +65,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: 'body',
-      filename: 'index.html',
-      template: './src/assets/index_template.html',
+      filename: '../index.html',
+      template: './src/assets/index.template.html',
       favicon: './src/assets/favicon.ico'
     }),
     new webpack.HotModuleReplacementPlugin()

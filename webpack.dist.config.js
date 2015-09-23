@@ -78,7 +78,7 @@ module.exports = {
       append: true,
       inject: 'body',
       filename: '../index.html',
-      template: './src/assets/index_template.html',
+      template: './src/assets/index.template.html',
       favicon: './src/assets/favicon.ico'
     }),
     new ExtractTextPlugin("app-[chunkhash].css", {
